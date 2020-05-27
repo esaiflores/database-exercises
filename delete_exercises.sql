@@ -1,4 +1,4 @@
-USE codeup_test_db;
+-- USE codeup_test_db;
 
 SELECT name, release_year from albums where release_year > 1991;
 DELETE from albums where release_year > 1991;
