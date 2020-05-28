@@ -18,3 +18,9 @@ FROM employees
 WHERE last_name like ('%q%')
   AND last_name NOT LIKE ('%qu%')
 group by last_name;
+
+SELECT last_name, count(*)
+FROM employees
+WHERE last_name LIKE '%q%' AND last_name NOT LIKE '%qu%'
+group by last_name
+ORDER BY COUNT(*);
