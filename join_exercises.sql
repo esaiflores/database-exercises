@@ -14,3 +14,12 @@ FROM employees as e
 WHERE to_date > now()
   AND gender ='f'
 ORDER BY dept_name;
+
+SELECT titles.title, count(*)
+from employees
+         join titles
+              on titles.emp_no = employees.emp_no
+         join dept_emp
+              on employees.emp_no = dept_emp.emp_no
+WHERE dept_emp.to_date > now() and dept_no = 'd009' and titles.to_date > now()
+group by titles.title;
