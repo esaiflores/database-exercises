@@ -17,3 +17,13 @@ where emp_no IN (
     from employees
     where first_name = 'Aamod'
 );
+
+select first_name, last_name
+from employees
+where emp_no in (
+    select emp_no
+    from dept_manager
+    where gender = 'f'
+      and to_date > now()
+
+);
